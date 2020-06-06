@@ -22,7 +22,7 @@ post {{url}}/register
 {{json}}
 
 {
-    "username":"user1",
+    "username":"user2",
     "password":"123456"
 }
 
@@ -37,4 +37,4 @@ post {{url}}/login
 
 ###个人信息
 get {{url}}/profile
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOTE5ZWVlMTFiOTFmMDJmYzFlNDIwMyIsImlhdCI6MTU4NjYxMDU3Mn0.eQe9aXsAQxf8Vc-K2WFVXp9OxPAySAXzqtkMh0guyJY
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlZGI0YmM0Zjg3M2ZjMjY3ODkyZDcwNCIsImlhdCI6MTU5MTQzMDg4OX0.akQGQFoKExRfR6ZmeeyQ4woYqG0ix0RMGF_c9fZlbdg
