@@ -1,0 +1,40 @@
+@url=http://localhost:3001/api
+/*2.Accept代表发送端（客户端）希望接受的数据类型。
+比如：Accept：text/xml（application/json）;
+代表客户端希望接受的数据类型是xml（json ）类型
+Content-Type代表发送端（客户端|服务器）发送的实体数据的数据类型。
+
+比如：Content-Type：text/html（application/json） ;
+代表发送端发送的数据格式是html（json）。
+二者合起来，
+
+Accept:text/xml；
+Content-Type:text/html
+
+即代表希望接受的数据类型是xml格式，本次请求发送的数据的数据格式是html。*/
+@ajson = Accept: application/json
+@json = Content-Type: application/json
+###
+get {{url}}/users
+
+###注册
+post {{url}}/register
+{{json}}
+
+{
+    "username":"user1",
+    "password":"123456"
+}
+
+###登录
+post {{url}}/login
+{{json}}
+
+{
+    "username":"user1",
+    "password":"123456"
+}
+
+###个人信息
+get {{url}}/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlOTE5ZWVlMTFiOTFmMDJmYzFlNDIwMyIsImlhdCI6MTU4NjYxMDU3Mn0.eQe9aXsAQxf8Vc-K2WFVXp9OxPAySAXzqtkMh0guyJY
