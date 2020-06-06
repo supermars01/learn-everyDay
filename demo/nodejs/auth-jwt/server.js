@@ -24,17 +24,9 @@ app.post("/api/login", async (req, res) => {
   const user = await User.findOne({
     username: req.body.username
   });
-  if (!user) {
-    res.status(422).send({
-      message: "用户不存在"
-    });
-  }
+  assert(user, 422, "用户不存在");
   const isPasswordValid = bcrypt.compareSync(req.body.password, user.password);
-  if (!isPasswordValid) {
-    res.status(422).send({
-      message: "用户密码错误"
-    });
-  }
+  assert(isPasswordValid, 422, "用户密码错误");
   const token = jwt.sign(
     {
       id: String(user._id)
